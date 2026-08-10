@@ -1,0 +1,272 @@
+# INTRODUCTION — WHAT IS AN ALGORITHM?
+
+## What is an Algorithm?
+
+The answer is very simple!
+
+> **An Algorithm is a sequence of steps taken by you to accomplish a task!**
+
+Simple, isn't it?
+
+Let's understand it with a very simple real-world example.
+
+---
+
+# Think About Planning a Trip
+
+Suppose you have to prepare for a tour to a place you want to visit the most.
+
+Let's say you are planning an **abroad trip**.
+
+Now think about it.
+
+What sequence of steps will you take to accomplish this task?
+
+You cannot simply wake up one morning and say:
+
+> "Let's go abroad!"
+
+You need to follow some steps.
+
+For example:
+
+### Step 1 — Gather the Details
+
+First, gather the details about what you need for the tour.
+
+For example:
+
+```text
+Where do I want to go?
+How many days will I stay?
+What places do I want to visit?
+What things do I need?
+What will be the approximate budget?
+```
+
+---
+
+### Step 2 — Requirement Gathering
+
+Now decide:
+
+> **What needs to be included and what should not be included?**
+
+For example:
+
+```text
+Which places do I want to visit?
+Which activities do I want to do?
+What things do I need to carry?
+What things are unnecessary?
+```
+
+This is basically **requirement gathering**.
+
+We first understand what is actually required to accomplish the task.
+
+---
+
+### Step 3 — Prepare the Things You Need
+
+Now start preparing the things required for the trip.
+
+For example:
+
+```text
+Iron your clothes
+Pack your clothes
+Prepare your documents
+Keep your passport
+Keep your necessary belongings
+```
+
+You are preparing everything according to the requirements you gathered earlier.
+
+---
+
+### Step 4 — Plan the Trip
+
+Now plan the actual trip.
+
+For example:
+
+```text
+Book the tickets
+Book the hotel
+Plan the places you want to visit
+Decide the schedule
+Prepare everything according to the plan
+```
+
+Everything is now being done in a particular sequence.
+
+---
+
+### Step 5 — That's It!
+
+Once all these steps are completed:
+
+```text
+Details gathered
+      ↓
+Requirements identified
+      ↓
+Things prepared
+      ↓
+Trip planned
+      ↓
+Tickets and hotel booked
+      ↓
+Ready for the trip
+```
+
+That's it!
+
+This is exactly the basic idea behind an **Algorithm**.
+
+---
+
+# So, What Did We Actually Do?
+
+We had one task:
+
+> **Prepare for an abroad trip.**
+
+Instead of trying to accomplish everything randomly, we divided the task into a **sequence of steps**.
+
+```text
+Task
+ ↓
+Step 1
+ ↓
+Step 2
+ ↓
+Step 3
+ ↓
+Step 4
+ ↓
+Task Completed
+```
+
+Each step moves us closer to accomplishing the final task.
+
+And that is what an Algorithm is all about.
+
+---
+
+# Now Think in Technical Terms
+
+Let's bring the same idea into programming.
+
+Suppose we want a computer program to accomplish a particular task.
+
+The computer does not simply understand our final goal and magically complete it.
+
+We need to provide it with a proper sequence of instructions.
+
+So, in technical terms:
+
+> **An Algorithm is a set of well-defined steps or rules that a computer program follows to accomplish a specific task or solve a particular problem.**
+
+In simple words:
+
+> **We define what needs to happen, step by step, so that the computer can execute those steps and produce the required result.**
+
+For example, suppose we want to find the largest number from an array.
+
+We can think about the task like this:
+
+```text
+Task:
+Find the largest number
+        ↓
+Start with the first number
+        ↓
+Compare it with the next number
+        ↓
+Keep the larger number
+        ↓
+Continue until the array ends
+        ↓
+Return the largest number
+```
+
+These steps together form the **algorithm** for solving that particular problem.
+
+---
+
+# Data Structure + Algorithm
+
+Now an important connection starts to appear.
+
+We have already learned:
+
+> **A Data Structure is a way of organising and storing data.**
+
+And now we have learned:
+
+> **An Algorithm is a sequence of steps used to accomplish a task or solve a problem.**
+
+So:
+
+```text
+DATA STRUCTURE
+        ↓
+How do we organise and store the data?
+
+ALGORITHM
+        ↓
+What steps do we take to work with that data?
+```
+
+And this is exactly why we study:
+
+# DATA STRUCTURES + ALGORITHMS
+
+A good DSA solution is not only about knowing the data.
+
+It is about knowing:
+
+> **How should I organise the data?**
+
+and:
+
+> **What sequence of steps should I follow to solve the problem efficiently?**
+
+That is the foundation of **Data Structures and Algorithms**.
+
+---
+
+# One Last Simple Thought
+
+Whenever you see a task and think:
+
+> **"What steps should I follow to accomplish this?"**
+
+you are already thinking in terms of an **Algorithm**.
+
+The task could be:
+
+```text
+Planning a trip
+Making a cup of tea
+Finding a book
+Getting served in a queue
+Finding the largest number
+Searching for an element
+Sorting data
+Finding the shortest path
+```
+
+The real-world task changes.
+
+The complexity changes.
+
+The number of steps changes.
+
+But the basic idea remains the same:
+
+> **A sequence of steps that takes us from a given problem to the desired result.**
+
+And that is what we call an **Algorithm**.
