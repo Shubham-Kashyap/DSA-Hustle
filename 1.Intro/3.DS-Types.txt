@@ -1,0 +1,1212 @@
+# DATA STRUCTURES — BASIC TYPES
+
+> **Language Focus: JavaScript**
+
+Before we start solving Data Structure and Algorithm problems, we need to understand one very basic thing:
+
+**What exactly is data, and how does a programming language store and organize it?**
+
+This may look like a very simple topic, but it is the foundation on which the entire DSA journey is built.
+
+If this foundation is unclear, then later topics such as Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hashing, and Algorithms will feel like separate and unrelated concepts.
+
+So, before entering the actual DSA world, let us build the foundation properly.
+
+---
+
+# 1. What is a Data Structure?
+
+A program works with **data**.
+
+That data can be a number, a name, a collection of numbers, a list of users, relationships between people, or even a complete network.
+
+The important question is:
+
+> **How should we store and organize this data so that we can use it efficiently?**
+
+This is where **Data Structures** come into the picture.
+
+### Definition
+
+> **A Data Structure is a way of organizing, storing, and managing data so that it can be accessed and processed efficiently.**
+
+In simple words:
+
+> **A Data Structure gives our data a proper shape and organization.**
+
+Think about a real-life example.
+
+Suppose you have 100 books.
+
+If you simply throw all of them into a room:
+
+```text
+Book
+Book
+Book
+Book
+Book
+Book
+...
+```
+
+The books are there, but finding a particular book can become difficult.
+
+Now imagine that you organize them:
+
+```text
+Shelf 1 → Programming
+Shelf 2 → Databases
+Shelf 3 → DSA
+Shelf 4 → System Design
+```
+
+Now the same books are much easier to manage.
+
+The books did not change.
+
+**Their organization changed.**
+
+That is the basic idea behind a Data Structure.
+
+A Data Structure helps us decide:
+
+* How data should be organized
+* How data should be stored
+* How data should be accessed
+* How data should be modified
+* How efficiently we can perform operations on that data
+
+This idea will become much more important as we move deeper into DSA.
+
+---
+
+# 2. Data Types and Data Structures are Not the Same
+
+Before going further, we need to separate two concepts that are often mixed together:
+
+### Data Type
+
+A **Data Type** tells us:
+
+> **What kind of value are we dealing with?**
+
+For example:
+
+```javascript
+10
+```
+
+is a number.
+
+```javascript
+"Hello"
+```
+
+is a string.
+
+```javascript
+true
+```
+
+is a boolean value.
+
+So, a Data Type mainly describes the **nature of the data**.
+
+---
+
+### Data Structure
+
+A **Data Structure** tells us:
+
+> **How data is organized and managed.**
+
+For example:
+
+```text
+Array
+Linked List
+Stack
+Queue
+Tree
+Graph
+Hash Table
+```
+
+These structures help us organize and work with data.
+
+So remember this simple distinction:
+
+```text
+Data Type
+    ↓
+What is the data?
+
+Data Structure
+    ↓
+How is the data organized?
+```
+
+This distinction is extremely important for the rest of our DSA journey.
+
+---
+
+# 3. Types of Data Structures
+
+At a broad level, we can start by dividing data into two categories:
+
+```text
+Data
+│
+├── Primitive
+│
+└── Non-Primitive
+```
+
+These categories are **language-dependent**.
+
+Different programming languages may classify and represent their data differently.
+
+For example, a language such as Java or C++ has separate concepts such as:
+
+```text
+int
+float
+char
+double
+boolean
+```
+
+JavaScript handles some of these concepts differently.
+
+Since our DSA implementation will primarily use **JavaScript**, we will understand these types from the JavaScript perspective.
+
+---
+
+# 4. Primitive Data Types in JavaScript
+
+## What does Primitive mean?
+
+A **primitive value** is a basic, single value.
+
+It represents one fundamental piece of information rather than a collection of related values.
+
+JavaScript has **7 primitive data types**:
+
+```text
+Primitive Data Types
+│
+├── Number
+├── BigInt
+├── String
+├── Boolean
+├── Undefined
+├── Null
+└── Symbol
+```
+
+Let us understand each one properly.
+
+---
+
+# 4.1 Number
+
+JavaScript uses the `Number` type for numeric values.
+
+This includes both:
+
+* Whole numbers
+* Decimal numbers
+
+For example:
+
+```javascript
+let age = 25;
+let count = 100;
+let marks = 95;
+```
+
+These are numbers without a decimal point.
+
+We can also have decimal values:
+
+```javascript
+let price = 99.99;
+let percentage = 87.5;
+let temperature = 36.7;
+```
+
+These are also `Number`.
+
+This is an important JavaScript-specific point.
+
+In some languages, we may have separate types such as:
+
+```text
+Integer
+Float
+Double
+```
+
+But in JavaScript, normal integer and floating-point values are both represented using:
+
+```text
+Number
+```
+
+For example:
+
+```javascript
+typeof 10;
+```
+
+returns:
+
+```text
+"number"
+```
+
+and:
+
+```javascript
+typeof 10.5;
+```
+
+also returns:
+
+```text
+"number"
+```
+
+So, from a JavaScript perspective:
+
+```text
+10       → Number
+1000     → Number
+3.14     → Number
+99.99    → Number
+```
+
+### Why is Number important in DSA?
+
+Numbers are everywhere in DSA.
+
+We use them for:
+
+```text
+Array indexes
+Counters
+Loop variables
+Positions
+Lengths
+Sums
+Distances
+Frequencies
+Scores
+Comparisons
+```
+
+For example:
+
+```javascript
+let index = 0;
+let count = 10;
+let sum = 150;
+```
+
+All of these are numbers, and we will use them constantly throughout our DSA practice.
+
+---
+
+# 4.2 BigInt
+
+JavaScript also provides a special numeric type called `BigInt`.
+
+It is used when we need to work with integers that are larger than the safe range of the normal `Number` type.
+
+Example:
+
+```javascript
+let bigNumber = 123456789012345678901234567890n;
+```
+
+Notice the `n` at the end.
+
+That `n` tells JavaScript:
+
+> **This is a BigInt value.**
+
+Example:
+
+```javascript
+let a = 10n;
+let b = 20n;
+
+console.log(a + b);
+```
+
+Result:
+
+```text
+30n
+```
+
+For normal DSA problems, BigInt will not appear very frequently.
+
+However, it is still important to know that it exists because it is one of JavaScript's primitive data types.
+
+---
+
+# 4.3 String
+
+A `String` represents text.
+
+Examples:
+
+```javascript
+let name = "Shubham";
+let message = "Hello";
+let language = "JavaScript";
+```
+
+A string can contain one character or many characters:
+
+```javascript
+"A"
+"Hello"
+"Data Structure"
+```
+
+Now there is an important JavaScript-specific point.
+
+In languages such as C or C++, we may have a separate `char` type for a single character.
+
+JavaScript does **not** have a separate `Character` or `Char` primitive type.
+
+So:
+
+```javascript
+let character = "A";
+```
+
+is still a:
+
+```text
+String
+```
+
+For JavaScript:
+
+```text
+"A"              → String
+"Hello"          → String
+"Data Structure" → String
+```
+
+### String and DSA
+
+Strings are extremely important in DSA.
+
+Later, we will work with problems involving:
+
+```text
+String Traversal
+String Reversal
+Palindrome
+Anagram
+Character Frequency
+Substring
+Subsequence
+Pattern Matching
+Sliding Window
+Two Pointer
+```
+
+So String is not just a simple programming-language type.
+
+It will become one of our major DSA problem-solving areas.
+
+---
+
+# 4.4 Boolean
+
+A Boolean represents a logical value.
+
+It has only two possible values:
+
+```javascript
+true
+false
+```
+
+For example:
+
+```javascript
+let isLoggedIn = true;
+let isAdmin = false;
+let found = true;
+```
+
+A Boolean basically answers questions such as:
+
+```text
+Yes / No
+True / False
+Present / Not Present
+Found / Not Found
+Visited / Not Visited
+```
+
+### Boolean in DSA
+
+Boolean values are extremely common in algorithms.
+
+For example:
+
+```javascript
+let found = false;
+
+if (arr[i] === target) {
+    found = true;
+}
+```
+
+Later, when we work with Graphs, we will frequently see something like:
+
+```javascript
+visited[node] = true;
+```
+
+So although Boolean is a very simple data type, it plays an important role in controlling algorithms.
+
+---
+
+# 4.5 Undefined
+
+`undefined` generally means:
+
+> **A value has not been assigned.**
+
+For example:
+
+```javascript
+let x;
+
+console.log(x);
+```
+
+The result is:
+
+```text
+undefined
+```
+
+The variable exists, but no value has been assigned to it.
+
+We can also encounter `undefined` when trying to access something that does not exist.
+
+For example:
+
+```javascript
+let numbers = [10, 20, 30];
+
+console.log(numbers[10]);
+```
+
+There is no element at index `10`, so JavaScript returns:
+
+```text
+undefined
+```
+
+This will become relevant when we start working with arrays and other structures.
+
+---
+
+# 4.6 Null
+
+`null` represents the intentional absence of a value.
+
+This is slightly different from `undefined`.
+
+Think of it like this:
+
+```text
+undefined
+    ↓
+No value has been assigned.
+
+null
+    ↓
+We intentionally say:
+"There is no value here."
+```
+
+For example:
+
+```javascript
+let currentNode = null;
+```
+
+This can be very meaningful in Data Structures.
+
+Imagine a Linked List:
+
+```text
+10 → 20 → 30 → null
+```
+
+The `null` tells us:
+
+> **There is no next node after 30.**
+
+This concept will become extremely important when we study Linked Lists and Trees.
+
+---
+
+# 4.7 Symbol
+
+`Symbol` is another primitive data type in JavaScript.
+
+A Symbol represents a unique value.
+
+Example:
+
+```javascript
+let id = Symbol("id");
+```
+
+Two Symbols with the same description are still different:
+
+```javascript
+let a = Symbol("id");
+let b = Symbol("id");
+
+console.log(a === b);
+```
+
+Result:
+
+```text
+false
+```
+
+This is because every Symbol is unique.
+
+Symbol is not something we will use frequently in normal DSA problems, but it is part of JavaScript's primitive type system and therefore belongs in our foundation.
+
+---
+
+# 5. Primitive Data Types — Complete Picture
+
+Now we can put everything together:
+
+```text
+JAVASCRIPT PRIMITIVE DATA TYPES
+│
+├── Number
+│   ├── Whole numbers
+│   └── Decimal numbers
+│
+├── BigInt
+│   └── Very large integers
+│
+├── String
+│   └── Text / sequence of characters
+│
+├── Boolean
+│   └── true / false
+│
+├── Undefined
+│   └── Value not assigned
+│
+├── Null
+│   └── Intentional absence of value
+│
+└── Symbol
+    └── Unique identifier/value
+```
+
+Some quick examples:
+
+```javascript
+42                  // Number
+3.14                // Number
+123456789012345n    // BigInt
+"Hello"             // String
+"A"                 // String
+true                // Boolean
+undefined           // Undefined
+null                // Null
+Symbol("id")        // Symbol
+```
+
+---
+
+# 6. Non-Primitive Data Structures
+
+Now we move to the second major category:
+
+# NON-PRIMITIVE DATA
+
+Primitive values are basic individual values.
+
+But real programs rarely work with only one value at a time.
+
+Imagine we want to store:
+
+```text
+100 students
+1000 products
+millions of transactions
+a social network
+a family hierarchy
+a road network
+```
+
+We need a way to **combine, organize, connect, and manage multiple pieces of data**.
+
+This is where non-primitive structures become important.
+
+### Simple Definition
+
+> **Non-Primitive Data Structures are structures that can represent and organize collections of data or more complex relationships between data.**
+
+In simple words:
+
+> **Primitive types give us individual pieces of information. Non-primitive structures help us build something bigger using those pieces.**
+
+For example:
+
+```text
+10
+20
+30
+40
+50
+```
+
+are individual values.
+
+But:
+
+```javascript
+let numbers = [10, 20, 30, 40, 50];
+```
+
+gives those values an organization.
+
+Now we have a collection.
+
+That is where Data Structures become much more interesting.
+
+---
+
+# 7. Important Non-Primitive Structures in JavaScript
+
+From the JavaScript perspective, we commonly work with structures such as:
+
+```text
+Non-Primitive / Complex Structures
+│
+├── Object
+├── Array
+├── Map
+├── Set
+├── Function
+└── Other built-in objects
+```
+
+But remember:
+
+> **Programming-language objects and DSA data structures are not always exactly the same thing.**
+
+For our DSA journey, we will focus on the structures that help us solve algorithmic problems.
+
+The important DSA structures will include:
+
+```text
+Array
+Linked List
+Stack
+Queue
+Deque
+Hash Table
+Hash Map
+Hash Set
+Tree
+Heap
+Trie
+Graph
+```
+
+Each of these solves a different kind of problem.
+
+---
+
+# 8. Array
+
+An Array is a collection of values stored in an ordered structure.
+
+Example:
+
+```javascript
+let numbers = [10, 20, 30, 40, 50];
+```
+
+We can visualize it as:
+
+```text
+Index:    0    1    2    3    4
+          ↓    ↓    ↓    ↓    ↓
+Value:   10   20   30   40   50
+```
+
+The index gives us a way to identify the position of each element.
+
+Arrays will become one of the most important structures in our DSA journey.
+
+We will use them for:
+
+```text
+Traversal
+Searching
+Sorting
+Two Pointer
+Sliding Window
+Prefix Sum
+Binary Search
+Kadane's Algorithm
+Frequency Counting
+Matrix Problems
+```
+
+In fact, a large portion of beginner and intermediate DSA problems starts with an Array.
+
+---
+
+# 9. Object
+
+An Object stores information using **key-value relationships**.
+
+Example:
+
+```javascript
+let student = {
+    name: "Rahul",
+    age: 24,
+    city: "Delhi"
+};
+```
+
+We can visualize it as:
+
+```text
+student
+│
+├── name  → Rahul
+├── age   → 24
+└── city  → Delhi
+```
+
+Objects are extremely useful when we want to associate one piece of information with another.
+
+In DSA, we can use objects for tasks such as:
+
+```text
+Frequency Counting
+Lookup
+Grouping
+Caching
+Mapping relationships
+```
+
+For example:
+
+```javascript
+let frequency = {};
+
+frequency["apple"] = 1;
+frequency["banana"] = 2;
+```
+
+Now we are using the object as a simple key-value lookup structure.
+
+---
+
+# 10. Map
+
+JavaScript provides a dedicated `Map` data structure for storing key-value pairs.
+
+Example:
+
+```javascript
+let map = new Map();
+
+map.set("apple", 5);
+map.set("banana", 10);
+```
+
+Conceptually:
+
+```text
+Key       Value
+
+apple  →    5
+banana →   10
+```
+
+Map is particularly useful when our problem requires:
+
+```text
+Fast lookup
+Frequency counting
+Key-value mapping
+Caching
+Tracking relationships
+```
+
+As we solve DSA problems, Map will become one of our most useful tools.
+
+---
+
+# 11. Set
+
+A `Set` is used when we want to store **unique values**.
+
+Example:
+
+```javascript
+let numbers = new Set();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(10);
+```
+
+The final Set contains:
+
+```text
+10
+20
+```
+
+The second `10` does not create another duplicate entry.
+
+This makes Set extremely useful for problems involving:
+
+```text
+Duplicate Detection
+Unique Elements
+Membership Checking
+Removing Duplicates
+```
+
+For example:
+
+```javascript
+let numbers = [1, 2, 3, 2, 4];
+
+let uniqueNumbers = new Set(numbers);
+```
+
+Conceptually:
+
+```text
+Input:
+1  2  3  2  4
+
+Set:
+1  2  3  4
+```
+
+---
+
+# 12. Functions
+
+In JavaScript, functions are also objects.
+
+For example:
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+```
+
+A function can be:
+
+* Stored in a variable
+* Passed as an argument
+* Returned from another function
+
+This is an important feature of JavaScript.
+
+However, we should make one distinction very clear:
+
+> **A Function is a JavaScript language construct, not a traditional DSA data structure like a Stack, Queue, Tree, or Graph.**
+
+We mention it here because JavaScript's object model treats functions as objects, but our actual DSA classification will remain focused on data structures used for organizing data.
+
+---
+
+# 13. From Language Structures to Actual DSA Structures
+
+Now we reach an important transition.
+
+JavaScript gives us built-in tools such as:
+
+```text
+Array
+Object
+Map
+Set
+```
+
+But DSA goes much further.
+
+We will also learn how to build and work with structures such as:
+
+```text
+Linked List
+Stack
+Queue
+Deque
+Tree
+Heap
+Trie
+Graph
+Hash Table
+```
+
+For example:
+
+### Need Last-In-First-Out?
+
+```text
+Stack
+```
+
+### Need First-In-First-Out?
+
+```text
+Queue
+```
+
+### Need hierarchical relationships?
+
+```text
+Tree
+```
+
+### Need network relationships?
+
+```text
+Graph
+```
+
+### Need fast key-based lookup?
+
+```text
+Hash Table / Map
+```
+
+### Need unique values?
+
+```text
+Set
+```
+
+### Need indexed sequential data?
+
+```text
+Array
+```
+
+This is where DSA stops being a list of definitions and starts becoming **problem-solving**.
+
+---
+
+# 14. The Most Important Idea
+
+While learning DSA, do not try to memorize:
+
+```text
+Array = this
+Stack = this
+Queue = this
+Tree = this
+Graph = this
+```
+
+Instead, develop the ability to ask:
+
+> **What problem am I trying to solve?**
+
+Then:
+
+> **How should I organize my data to solve that problem efficiently?**
+
+For example:
+
+If the requirement is:
+
+```text
+"Tell me whether this value already exists."
+```
+
+A `Set` may be useful.
+
+If the requirement is:
+
+```text
+"Tell me how many times each value occurs."
+```
+
+A `Map` or frequency object may be useful.
+
+If the requirement is:
+
+```text
+"Last item inserted should come out first."
+```
+
+A `Stack` is a natural fit.
+
+If the requirement is:
+
+```text
+"First item inserted should come out first."
+```
+
+A `Queue` is a natural fit.
+
+If the requirement is:
+
+```text
+"Represent parent-child relationships."
+```
+
+A `Tree` may be appropriate.
+
+If the requirement is:
+
+```text
+"Represent connections between different entities."
+```
+
+A `Graph` may be appropriate.
+
+This way of thinking is the real beginning of DSA.
+
+---
+
+# 15. Primitive vs Non-Primitive — Final Comparison
+
+| Primitive                                | Non-Primitive                                           |
+| ---------------------------------------- | ------------------------------------------------------- |
+| Represents a basic value                 | Represents a collection or complex organization of data |
+| Usually represents one fundamental value | Can represent multiple values or relationships          |
+| Examples: Number, String, Boolean        | Examples: Array, Object, Map, Set                       |
+| Forms the basic building blocks          | Builds larger structures using data                     |
+| Simpler representation                   | More complex organization                               |
+
+The simplest way to remember it:
+
+```text
+Primitive
+    ↓
+Basic building blocks
+
+Non-Primitive
+    ↓
+Structures built to organize and manage data
+```
+
+---
+
+# 16. The Complete Foundation
+
+Our first foundation now looks like this:
+
+```text
+DATA
+│
+├── PRIMITIVE
+│   │
+│   ├── Number
+│   ├── BigInt
+│   ├── String
+│   ├── Boolean
+│   ├── Undefined
+│   ├── Null
+│   └── Symbol
+│
+└── NON-PRIMITIVE / COMPLEX
+    │
+    ├── Object
+    ├── Array
+    ├── Map
+    ├── Set
+    └── Other Objects
+```
+
+And from here, our actual DSA world expands into:
+
+```text
+DATA STRUCTURES
+│
+├── Linear
+│   ├── Array
+│   ├── Linked List
+│   ├── Stack
+│   ├── Queue
+│   └── Deque
+│
+├── Non-Linear
+│   ├── Tree
+│   ├── Heap
+│   ├── Trie
+│   └── Graph
+│
+└── Hash-Based
+    ├── Hash Table
+    ├── Hash Map
+    └── Hash Set
+```
+
+This is only the **map**.
+
+The actual DSA journey begins when we start asking:
+
+> **Why was this structure created?**
+
+> **What problem does it solve?**
+
+> **How is the data organized internally?**
+
+> **How do we access it?**
+
+> **How do we insert and delete?**
+
+> **How fast are these operations?**
+
+> **When should we choose this structure over another one?**
+
+Those questions will drive the rest of our DSA movie.
+
+---
+
+# Final Takeaway
+
+Remember these three lines:
+
+> **Data Type tells us what kind of data we have.**
+
+> **Data Structure tells us how we organize and manage that data.**
+
+> **Algorithm tells us what steps we take to solve a problem using that data.**
+
+These three ideas form the foundation of our entire DSA journey.
+
+Everything that comes later — Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hashing, Searching, Sorting, Recursion, Dynamic Programming, and everything else — will build upon this foundation.
