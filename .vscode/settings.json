@@ -1,3 +1,8 @@
 {
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    // include .git folder in exsting files
+    "files.exclude": {
+        "**/.git": false
+    },
 }
