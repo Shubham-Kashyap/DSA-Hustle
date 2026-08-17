@@ -28,3 +28,21 @@ function sumOfDigitsOfANumber(n) {
   }
   return sum;
 }
+
+/**
+ * Simplest of all solutions
+ * @description Write a function that takes an integer n and returns the sum of digits of n using Math.floor
+ * @param {number} n
+ * @return {number}
+ */
+
+function sumOfDigitsOfANumber(n = 0) {
+  let temp = 0;
+  const strigifiedValue = n.toString();
+  for (i of strigifiedValue) {
+    console.log(i);
+    temp += parseInt(i);
+  }
+  return temp;
+}
+console.log(sumOfDigitsOfANumber(2222));
