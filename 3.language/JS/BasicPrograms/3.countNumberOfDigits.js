@@ -29,3 +29,17 @@ function countNumberOfDigits(n) {
   }
   return count;
 }
+
+/**
+ * simplest of all solutions
+ * @description Write a function that takes an integer n and returns the number of digits in n using Math.floor
+ * @param {*} n
+ * @returns
+ */
+function countNumberOfDigits(n = 0) {
+  let count = 0;
+  const length = n.toString().length;
+  return length;
+}
+
+console.log(countNumberOfDigits(123123132));
